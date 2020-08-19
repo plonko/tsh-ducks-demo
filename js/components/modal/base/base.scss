@@ -1,0 +1,55 @@
+@import 'global';
+
+$timeout-duration: 800ms;
+
+.ModalOverlay {
+    align-items: center;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-name: fadeIn;
+    animation-timing-function: $grow-ease;
+    background-color: $modal-overlay-color;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: z-index('modal-overlay');
+}
+
+.ModalOverlay--ExitAnimation {
+    animation-duration: $timeout-duration;
+    animation-name: fadeOut;
+}
+
+.AriaWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background-color: $modal-overlay-color;
+        opacity: 1;
+    }
+    60% {
+        background-color: $modal-overlay-color;
+    }
+    100% {
+        background-color: $transparent;
+        opacity: 1;
+    }
+}

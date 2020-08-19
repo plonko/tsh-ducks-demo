@@ -1,0 +1,21 @@
+@import 'global';
+
+.ModalFullscreen {
+    background-color: $white;
+    display: flex;
+    height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        border: 1rem solid $tsh-yellow;
+        padding: 3.8rem 3.2rem 3rem;
+    }
+}
+
+.ExpandToContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
